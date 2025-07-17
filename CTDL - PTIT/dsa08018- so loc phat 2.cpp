@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+void Test(int n){
+	queue< string > q;
+	queue< string > p;
+	string s;
+	q.push("6");
+	q.push("8");
+	while(true){
+		s = q.front();
+		q.pop();
+		if(s.length() <= n){
+			p.push(s);
+		}
+		else break;
+		q.push(s+"6");
+		q.push(s+"8");
+		
+	}
+	cout << p.size() << endl;
+	while(!p.empty()) {
+		cout << p.front() <<" ";
+		p.pop();
+	}
+}
+int main(){
+	int t;
+	cin >> t;
+	while(t--){
+		int n;
+		cin >> n;
+		Test(n);
+		cout << endl;
+	}
+}
